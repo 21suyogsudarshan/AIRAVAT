@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gov-ai.internal/schemas/ingestion.json",
+  "title": "GrievanceIngestionSchema",
+  "description": "Standardized schema for incoming municipal grievance complaints",
+  "type": "object",
+  "properties": {
+    "ticket_id": {
+      "type": "string",
+      "pattern": "^GOV_[0-9]{4}_[0-9]{5}$",
+      "description": "Unique identifier format e.g., GOV_2026_00123"
+    },
+    "source_channel": {
+      "type": "string",
+      "enum": ["PORTAL", "PHONE_TRANSCRIPT", "WHATSAPP", "IN_PERSON"],
+      "description": "Originating channel of the complaint"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 formatted timestamp"
+    },
+    "raw_input": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 5,
+          "description": "Raw complaint description in English, Hindi, or Hinglish"
+        },
+        "audio_url": {
+          "type": ["string", "null"],
+          "description": "Link to voice note recording if available"
+        },
+        "image_urls": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of photo asset links uploaded by the user"
+        }
+      },
+      "required": ["text"]
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "ward_number": { "type": ["integer", "null"] },
+        "landmark": { "type": ["string", "null"] },
+        "latitude": { "type": ["number", "null"] },
+        "longitude": { "type": ["number", "null"] }
+      }
+    }
+  },
+  "required": ["ticket_id", "source_channel", "timestamp", "raw_input"]
+}

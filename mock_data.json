@@ -1,0 +1,32 @@
+[
+  {
+    "ticket_id": "GOV_2026_00101",
+    "source_channel": "WHATSAPP",
+    "timestamp": "2026-10-09T09:15:00Z",
+    "raw_input": {
+      "text": "Sadak pe bada gadda h aur sewage paani raste pe beh raha h. Bohot badboo aa rahi h.",
+      "image_urls": ["https://storage.gov.in/img1.jpg"]
+    },
+    "location": { "ward_number": 4, "landmark": "Near Main Market" }
+  },
+  {
+    "ticket_id": "GOV_2026_00102",
+    "source_channel": "PHONE_TRANSCRIPT",
+    "timestamp": "2026-10-09T09:30:00Z",
+    "raw_input": {
+      "text": "Khamba gir gaya hai wires open latak rahe hain street lights bhi band hain night main",
+      "image_urls": []
+    },
+    "location": { "ward_number": 12, "landmark": "Block B Road" }
+  },
+  {
+    "ticket_id": "GOV_2026_00103",
+    "source_channel": "PORTAL",
+    "timestamp": "2026-10-09T10:00:00Z",
+    "raw_input": {
+      "text": "Water pipeline burst ho gayi h, paani waste ho rha h aur road par paani bhar gaya h",
+      "image_urls": ["https://storage.gov.in/img2.jpg"]
+    },
+    "location": { "ward_number": 4, "landmark": "Near Main Market" }
+  }
+]
