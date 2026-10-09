@@ -1,0 +1,7 @@
+# Synergy Decision Trail Index
+
+| Decision Area | Initial View | AI Suggestion | Evidence / Boundary Rule | Final Human Action |
+| :--- | :--- | :--- | :--- | :--- |
+| **Duplicate Closing** | Merge duplicate complaints automatically[cite: 10]. | Auto-close secondary tickets if text similarity > 85%[cite: 10]. | **Case Boundary Rule:** *"Do not design a system that automatically rejects or closes complaints solely on an AI score."*[cite: 10] | **REJECTED AI ADVICE.** Linked duplicate tickets under a Parent Issue Cluster in `dedup_poc.py` while keeping status as `LINKED_FOR_HUMAN_REVIEW`[cite: 10]. |
+| **Language Pipeline** | Translate Hinglish to English first[cite: 10]. | Use standard translation API before text classification[cite: 10]. | Hinglish phrases like *"paani bhar gaya"* lost multi-department context in raw translation[cite: 10]. | **MODIFIED AI ADVICE.** Maintained direct multi-label keyword extraction on raw Hinglish in `router_poc.py` alongside translated summaries[cite: 10]. |
+| **Priority Scoring** | Score urgency based on sentiment analysis[cite: 10]. | Assign higher priority to angry citizen complaints[cite: 10]. | Emotional complaints about minor issues would deprioritize low-frequency but critical public safety hazards[cite: 10]. | **REJECTED AI ADVICE.** Implemented a Public Safety Keyword & Hazard Keyword Matrix instead of emotional sentiment analysis[cite: 10]. |
